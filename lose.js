@@ -17,8 +17,8 @@ function drawLose() {
   textAlign(CENTER, CENTER);
 
   // Main message
-  textSize(40);
-  text("You Lose!", width / 2, 300);
+  textSize(30);
+  text("You Lose! You should find it's owner, don't steal :(", width / 2, 300);
 
   // Instruction text
   textSize(20);

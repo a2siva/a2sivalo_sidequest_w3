@@ -17,7 +17,14 @@ const gameBtn = {
   y: 550, // y position (centre of the button)
   w: 260, // width
   h: 90, // height
-  label: "PRESS HERE", // text shown on the button
+  label: "FIND IT'S OWNER", // text shown on the button
+};
+const gameBtn2 = {
+  x: 400,
+  y: 430,
+  w: 260,
+  h: 90,
+  label: "STEAL IT",
 };
 
 // ------------------------------
@@ -33,23 +40,21 @@ function drawGame() {
   fill(0); // black text
   textSize(32);
   textAlign(CENTER, CENTER);
-  text("Game Screen", width / 2, 160);
+  text("GAME OF ETHICS!", width / 2, 120);
 
   textSize(18);
-  text(
-    "Click the button (or press ENTER) for a random result.",
-    width / 2,
-    210,
-  );
+  text("You find a lost phone.", width / 2, 190);
+  text("What do you do?", width / 2, 230);
 
   // ---- Draw the button ----
   // We pass the button object to a helper function
   drawGameButton(gameBtn);
+  drawGameButton(gameBtn2);
 
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(gameBtn) ? HAND : ARROW);
+  cursor(isHover(gameBtn) || isHover(gameBtn2) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -90,9 +95,10 @@ function drawGameButton({ x, y, w, h, label }) {
 // This function is called from main.js
 // only when currentScreen === "game"
 function gameMousePressed() {
-  // Only trigger the outcome if the button is clicked
   if (isHover(gameBtn)) {
-    triggerRandomOutcome();
+    currentScreen = "win";
+  } else if (isHover(gameBtn2)) {
+    currentScreen = "lose";
   }
 }
 
@@ -101,10 +107,8 @@ function gameMousePressed() {
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
 function gameKeyPressed() {
-  // ENTER key triggers the same behaviour as clicking the button
-  if (keyCode === ENTER) {
-    triggerRandomOutcome();
-  }
+  if (key === "1") currentScreen = "win";
+  if (key === "2") currentScreen = "lose";
 }
 
 // ------------------------------
