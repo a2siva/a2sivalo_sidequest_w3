@@ -1,6 +1,6 @@
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button - Modified Ethics Version!
+GBDA302 Week 3 Example 1: Instructions Screen with Back button - Modified Game of Ethics Version!
 
 ---
 
@@ -21,7 +21,9 @@ This p5.js project demonstrates a simple multi-screen game structure using a sta
 ## Setup and Interaction Instructions
 
 - Open the GitHub Pages live link in Google Chrome.
--
+- Press START to begin or INSTRUCTIONS to see the rules
+- Answer the scenario with the 2 button options
+- Outcomes appear as right or wrong based on what player chooses
 
 ---
 
@@ -33,6 +35,12 @@ N/A
 
 ## Iteration Notes
 
-The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
+Post-Playtest: Changes Made
+- Replaced the original random win/lose mechanic with a player-driven branching decision.
+- Adjusted text positioning and spacing for improved readability and clarity.
+
+Post-Showcase: Two Planned Improvements
+- Add a tracked player stat (such as karma) that influences endings.
+- Expand the story and game of ethics to include a second decision for a more complex structure.
 
 ---
